@@ -353,7 +353,7 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
 
     NSUInteger baseLength = [userMetaDataString length];
     if (baseLength > 255) {
-        AWSDDLogWarn(@"Total number of characters in username fields cannot exceed (%lu)", (255 - baseLength));
+        AWSDDLogWarn(@"Total number of characters in username fields cannot exceed (%i)", (int)(255 - baseLength));
         self.mqttClient.userMetaData = [userMetaDataString substringToIndex:255];
     } else {
         self.mqttClient.userMetaData = [NSString stringWithString:userMetaDataString];
@@ -388,7 +388,7 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
 
     NSUInteger metaDataLength = [userMetaDataString length];
     if (metaDataLength > 255) {
-        AWSDDLogWarn(@"Total number of characters in username fields cannot exceed (%lu)", (255 - baseLength));
+        AWSDDLogWarn(@"Total number of characters in username fields cannot exceed (%i)", (int)(255 - baseLength));
         self.mqttClient.userMetaData = [userMetaDataString substringToIndex:255];
     } else {
         self.mqttClient.userMetaData = [NSString stringWithString:userMetaDataString];
@@ -935,8 +935,8 @@ static NSString * const AWSIoTShadowOperationStatusTypeStrings[] = {
         // Do not update our local version if the received version is less than
         // our version.
         //
-        AWSDDLogDebug(@"local shadow version number: %d, received shadow version number: %d",
-                      shadow.version, versionNumber);
+        AWSDDLogDebug(@"local shadow version number: %u, received shadow version number: %u",
+                      (unsigned int)shadow.version, (unsigned int)versionNumber);
         if(versionNumber >= shadow.version) {
             shadow.version = versionNumber;
         }
