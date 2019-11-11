@@ -740,7 +740,7 @@
       },\
       \"input\":{\"shape\":\"CreateSnapshotsRequest\"},\
       \"output\":{\"shape\":\"CreateSnapshotsResult\"},\
-      \"documentation\":\"<p>Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the instance. Boot volumes can be excluded by changing the paramaters. </p>\"\
+      \"documentation\":\"<p>Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the instance. Boot volumes can be excluded by changing the parameters. </p>\"\
     },\
     \"CreateSpotDatafeedSubscription\":{\
       \"name\":\"CreateSpotDatafeedSubscription\",\
@@ -779,7 +779,7 @@
       },\
       \"input\":{\"shape\":\"CreateTrafficMirrorFilterRequest\"},\
       \"output\":{\"shape\":\"CreateTrafficMirrorFilterResult\"},\
-      \"documentation\":\"<p>Creates a Traffic Mirror filter.</p> <p>A Traffic Mirror filter is a set of rules that defines the traffic to mirror.</p> <p>By default, no traffic is mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a> to add Traffic Mirror rules to the filter. The rules you add define what traffic gets mirrored. You can also use <a>ModifyTrafficMirrorFilterNetworkServices</a> to mirror supported network services.</p>\"\
+      \"documentation\":\"<p>Creates a Traffic Mirror filter.</p> <p>A Traffic Mirror filter is a set of rules that defines the traffic to mirror.</p> <p>By default, no traffic is mirrored. To mirror traffic, use <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm\\\">CreateTrafficMirrorFilterRule</a> to add Traffic Mirror rules to the filter. The rules you add define what traffic gets mirrored. You can also use <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html\\\">ModifyTrafficMirrorFilterNetworkServices</a> to mirror supported network services.</p>\"\
     },\
     \"CreateTrafficMirrorFilterRule\":{\
       \"name\":\"CreateTrafficMirrorFilterRule\",\
@@ -789,7 +789,7 @@
       },\
       \"input\":{\"shape\":\"CreateTrafficMirrorFilterRuleRequest\"},\
       \"output\":{\"shape\":\"CreateTrafficMirrorFilterRuleResult\"},\
-      \"documentation\":\"<p>Creates a Traffic Mirror rule. </p> <p>A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror filter ID when you create the rule.</p>\"\
+      \"documentation\":\"<p>Creates a Traffic Mirror filter rule. </p> <p>A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror filter ID when you create the rule.</p>\"\
     },\
     \"CreateTrafficMirrorSession\":{\
       \"name\":\"CreateTrafficMirrorSession\",\
@@ -799,7 +799,7 @@
       },\
       \"input\":{\"shape\":\"CreateTrafficMirrorSessionRequest\"},\
       \"output\":{\"shape\":\"CreateTrafficMirrorSessionResult\"},\
-      \"documentation\":\"<p>Creates a Traffic Mirror session.</p> <p>A Traffic Mirror session actively copies packets from a Traffic Mirror source to a Traffic Mirror target. Create a filter, and then assign it to the session to define a subset of the traffic to mirror, for example all TCP traffic.</p> <p>The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a different VPC connected via VPC peering or a transit gateway. </p> <p>By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create filter rules that specify the traffic to mirror.</p>\"\
+      \"documentation\":\"<p>Creates a Traffic Mirror session.</p> <p>A Traffic Mirror session actively copies packets from a Traffic Mirror source to a Traffic Mirror target. Create a filter, and then assign it to the session to define a subset of the traffic to mirror, for example all TCP traffic.</p> <p>The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a different VPC connected via VPC peering or a transit gateway. </p> <p>By default, no traffic is mirrored. Use <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm\\\">CreateTrafficMirrorFilter</a> to create filter rules that specify the traffic to mirror.</p>\"\
     },\
     \"CreateTrafficMirrorTarget\":{\
       \"name\":\"CreateTrafficMirrorTarget\",\
@@ -809,7 +809,7 @@
       },\
       \"input\":{\"shape\":\"CreateTrafficMirrorTargetRequest\"},\
       \"output\":{\"shape\":\"CreateTrafficMirrorTargetResult\"},\
-      \"documentation\":\"<p>Creates a target for your Traffic Mirror session.</p> <p>A Traffic Mirror target is the destination for mirrored traffic. The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in different VPCs connected via VPC peering or a transit gateway.</p> <p>A Traffic Mirror target can be a network interface, or a Network Load Balancer.</p> <p>To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.</p>\"\
+      \"documentation\":\"<p>Creates a target for your Traffic Mirror session.</p> <p>A Traffic Mirror target is the destination for mirrored traffic. The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in different VPCs connected via VPC peering or a transit gateway.</p> <p>A Traffic Mirror target can be a network interface, or a Network Load Balancer.</p> <p>To use the target in a Traffic Mirror session, use <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm\\\">CreateTrafficMirrorSession</a>.</p>\"\
     },\
     \"CreateTransitGateway\":{\
       \"name\":\"CreateTransitGateway\",\
@@ -2839,7 +2839,7 @@
       },\
       \"input\":{\"shape\":\"ModifyFleetRequest\"},\
       \"output\":{\"shape\":\"ModifyFleetResult\"},\
-      \"documentation\":\"<p>Modifies the specified EC2 Fleet.</p> <p>You can only modify an EC2 Fleet request of type <code>maintain</code>.</p> <p>While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot Instances according to the allocation strategy for the EC2 Fleet request. If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches instances using the Spot Instance pool with the lowest price. If the allocation strategy is <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.</p> <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels any open requests that exceed the new target capacity. You can request that the EC2 Fleet terminate Spot Instances until the size of the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the EC2 Fleet terminates the instances with the highest price per unit. If the allocation strategy is <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the Spot Instance pools that have the least available Spot Instance capacity. If the allocation strategy is <code>diversified</code>, the EC2 Fleet terminates instances across the Spot Instance pools. Alternatively, you can request that the EC2 Fleet keep the fleet at its current size, but not replace any Spot Instances that are interrupted or that you terminate manually.</p> <p>If you are finished with your EC2 Fleet for now, but will use it again later, you can set the target capacity to 0.</p>\"\
+      \"documentation\":\"<p>Modifies the specified EC2 Fleet.</p> <p>You can only modify an EC2 Fleet request of type <code>maintain</code>.</p> <p>While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot Instances according to the allocation strategy for the EC2 Fleet request. If the allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches instances using the Spot Instance pool with the lowest price. If the allocation strategy is <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot Instance pools. If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.</p> <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels any open requests that exceed the new target capacity. You can request that the EC2 Fleet terminate Spot Instances until the size of the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowest-price</code>, the EC2 Fleet terminates the instances with the highest price per unit. If the allocation strategy is <code>capacity-optimized</code>, the EC2 Fleet terminates the instances in the Spot Instance pools that have the least available Spot Instance capacity. If the allocation strategy is <code>diversified</code>, the EC2 Fleet terminates instances across the Spot Instance pools. Alternatively, you can request that the EC2 Fleet keep the fleet at its current size, but not replace any Spot Instances that are interrupted or that you terminate manually.</p> <p>If you are finished with your EC2 Fleet for now, but will use it again later, you can set the target capacity to 0.</p>\"\
     },\
     \"ModifyFpgaImageAttribute\":{\
       \"name\":\"ModifyFpgaImageAttribute\",\
@@ -3002,7 +3002,7 @@
       },\
       \"input\":{\"shape\":\"ModifyTrafficMirrorFilterNetworkServicesRequest\"},\
       \"output\":{\"shape\":\"ModifyTrafficMirrorFilterNetworkServicesResult\"},\
-      \"documentation\":\"<p>Allows or restricts mirroring network services.</p> <p> By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter, all traffic related to that network service will be mirrored. When you no longer want to mirror network services, use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter. </p> <p>FFor information about filter rule properties, see <a href=\\\"https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services\\\">Network Services</a> in the <i>Traffic Mirroring User Guide </i>.</p>\"\
+      \"documentation\":\"<p>Allows or restricts mirroring network services.</p> <p> By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter, all traffic related to that network service will be mirrored. When you no longer want to mirror network services, use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter. </p> <p>For information about filter rule properties, see <a href=\\\"https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html\\\">Network Services</a> in the <i>Traffic Mirroring User Guide </i>.</p>\"\
     },\
     \"ModifyTrafficMirrorFilterRule\":{\
       \"name\":\"ModifyTrafficMirrorFilterRule\",\
@@ -3229,7 +3229,7 @@
       },\
       \"input\":{\"shape\":\"RegisterImageRequest\"},\
       \"output\":{\"shape\":\"RegisterImageResult\"},\
-      \"documentation\":\"<p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html\\\">Creating Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI in a single request, so you don't have to register the AMI yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You specify the snapshot using the block device mapping. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html\\\">Launching a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.</p> <p>Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with an AMI to verify the subscription status for package updates. Creating an AMI from an EBS snapshot does not maintain this billing code, and instances launched from such an AMI are not able to connect to package update infrastructure. If you purchase a Reserved Instance offering for one of these Linux distributions and launch instances using an AMI that does not contain the required billing code, your Reserved Instance is not applied to these instances.</p> <p>To create an AMI for operating systems that require a billing code, see <a>CreateImage</a>.</p> <p>If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image, deregister the previous image and register the new image.</p>\"\
+      \"documentation\":\"<p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html\\\">Creating Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI in a single request, so you don't have to register the AMI yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You specify the snapshot using the block device mapping. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html\\\">Launching a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.</p> <p>Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use the EC2 billing product code associated with an AMI to verify the subscription status for package updates. To create a new AMI for operating systems that require a billing product code, do the following:</p> <ol> <li> <p>Launch an instance from an existing AMI with that billing product code.</p> </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing product code association.</p> </li> </ol> <p>If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched from an AMI with a billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the On-Demand Instance. </p> <p>If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image, deregister the previous image and register the new image.</p>\"\
     },\
     \"RejectTransitGatewayVpcAttachment\":{\
       \"name\":\"RejectTransitGatewayVpcAttachment\",\
@@ -3638,7 +3638,7 @@
       \"required\":[\"TransitGatewayAttachmentId\"],\
       \"members\":{\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"DryRun\":{\
@@ -3669,7 +3669,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"ServiceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ServiceId\",\
           \"documentation\":\"<p>The ID of the endpoint service.</p>\"\
         },\
         \"VpcEndpointIds\":{\
@@ -3698,7 +3698,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VpcPeeringConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcPeeringConnectionId\",\
           \"documentation\":\"<p>The ID of the VPC peering connection. You must specify this parameter in the request.</p>\",\
           \"locationName\":\"vpcPeeringConnectionId\"\
         }\
@@ -4007,6 +4007,7 @@
       },\
       \"documentation\":\"<p>Contains the output of AllocateHosts.</p>\"\
     },\
+    \"AllocationId\":{\"type\":\"string\"},\
     \"AllocationIdList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -4065,11 +4066,11 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint.</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC in which the associated target network is located.</p>\"\
         },\
         \"SecurityGroupIds\":{\
@@ -4116,7 +4117,7 @@
           \"locationName\":\"ipv6Addresses\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         }\
@@ -4147,7 +4148,7 @@
           \"locationName\":\"allowReassignment\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         },\
@@ -4201,11 +4202,11 @@
       \"type\":\"structure\",\
       \"members\":{\
         \"AllocationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"AllocationId\",\
           \"documentation\":\"<p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached.</p>\"\
         },\
         \"PublicIp\":{\
@@ -4223,7 +4224,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p> <p>For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. </p>\",\
           \"locationName\":\"networkInterfaceId\"\
         },\
@@ -4252,11 +4253,11 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint.</p>\"\
         },\
         \"SubnetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetId\",\
           \"documentation\":\"<p>The ID of the subnet to associate with the Client VPN endpoint.</p>\"\
         },\
         \"ClientToken\":{\
@@ -4293,11 +4294,11 @@
       ],\
       \"members\":{\
         \"DhcpOptionsId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"DhcpOptionsId\",\
           \"documentation\":\"<p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         },\
         \"DryRun\":{\
@@ -4319,7 +4320,7 @@
           \"documentation\":\"<p>The IAM instance profile.</p>\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         }\
       }\
@@ -4347,12 +4348,12 @@
           \"locationName\":\"dryRun\"\
         },\
         \"RouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableId\",\
           \"documentation\":\"<p>The ID of the route table.</p>\",\
           \"locationName\":\"routeTableId\"\
         },\
         \"SubnetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetId\",\
           \"documentation\":\"<p>The ID of the subnet.</p>\",\
           \"locationName\":\"subnetId\"\
         }\
@@ -4381,7 +4382,7 @@
           \"locationName\":\"ipv6CidrBlock\"\
         },\
         \"SubnetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetId\",\
           \"documentation\":\"<p>The ID of your subnet.</p>\",\
           \"locationName\":\"subnetId\"\
         }\
@@ -4410,11 +4411,11 @@
       ],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"DryRun\":{\
@@ -4447,7 +4448,7 @@
           \"documentation\":\"<p>An IPv4 CIDR block to associate with the VPC.</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -4552,12 +4553,12 @@
           \"locationName\":\"SecurityGroupId\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of a ClassicLink-enabled VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -4586,12 +4587,12 @@
           \"locationName\":\"dryRun\"\
         },\
         \"InternetGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InternetGatewayId\",\
           \"documentation\":\"<p>The ID of the internet gateway.</p>\",\
           \"locationName\":\"internetGatewayId\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -4616,12 +4617,12 @@
           \"locationName\":\"dryRun\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         }\
@@ -4652,11 +4653,11 @@
           \"documentation\":\"<p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         },\
         \"VolumeId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VolumeId\",\
           \"documentation\":\"<p>The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</p>\"\
         },\
         \"DryRun\":{\
@@ -4675,11 +4676,11 @@
       ],\
       \"members\":{\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         },\
         \"VpnGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnGatewayId\",\
           \"documentation\":\"<p>The ID of the virtual private gateway.</p>\"\
         },\
         \"DryRun\":{\
@@ -4701,6 +4702,7 @@
       },\
       \"documentation\":\"<p>Contains the output of AttachVpnGateway.</p>\"\
     },\
+    \"AttachmentId\":{\"type\":\"string\"},\
     \"AttachmentStatus\":{\
       \"type\":\"string\",\
       \"enum\":[\
@@ -4783,7 +4785,7 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint.</p>\"\
         },\
         \"TargetNetworkCidr\":{\
@@ -5107,7 +5109,7 @@
       ],\
       \"members\":{\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>\"\
         },\
         \"Storage\":{\
@@ -5300,7 +5302,7 @@
       \"required\":[\"CapacityReservationId\"],\
       \"members\":{\
         \"CapacityReservationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"CapacityReservationId\",\
           \"documentation\":\"<p>The ID of the Capacity Reservation to be cancelled.</p>\"\
         },\
         \"DryRun\":{\
@@ -5324,7 +5326,7 @@
       \"required\":[\"ConversionTaskId\"],\
       \"members\":{\
         \"ConversionTaskId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ConversionTaskId\",\
           \"documentation\":\"<p>The ID of the conversion task.</p>\",\
           \"locationName\":\"conversionTaskId\"\
         },\
@@ -5345,7 +5347,7 @@
       \"required\":[\"ExportTaskId\"],\
       \"members\":{\
         \"ExportTaskId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ExportTaskId\",\
           \"documentation\":\"<p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>\",\
           \"locationName\":\"exportTaskId\"\
         }\
@@ -5363,7 +5365,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"ImportTaskId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ImportTaskId\",\
           \"documentation\":\"<p>The ID of the import image or import snapshot task to be canceled.</p>\"\
         }\
       }\
@@ -5393,7 +5395,7 @@
       \"required\":[\"ReservedInstancesListingId\"],\
       \"members\":{\
         \"ReservedInstancesListingId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ReservedInstancesListingId\",\
           \"documentation\":\"<p>The ID of the Reserved Instance listing.</p>\",\
           \"locationName\":\"reservedInstancesListingId\"\
         }\
@@ -5676,6 +5678,7 @@
       },\
       \"documentation\":\"<p>Describes a Capacity Reservation.</p>\"\
     },\
+    \"CapacityReservationId\":{\"type\":\"string\"},\
     \"CapacityReservationIdSet\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -6243,6 +6246,7 @@
       },\
       \"documentation\":\"<p>Describes a Client VPN endpoint.</p>\"\
     },\
+    \"ClientVpnEndpointId\":{\"type\":\"string\"},\
     \"ClientVpnEndpointStatus\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -6356,7 +6360,7 @@
       ],\
       \"members\":{\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         },\
         \"ProductCode\":{\
@@ -6462,6 +6466,7 @@
       },\
       \"documentation\":\"<p>Describes a connection notification for a VPC endpoint or VPC endpoint service.</p>\"\
     },\
+    \"ConnectionNotificationId\":{\"type\":\"string\"},\
     \"ConnectionNotificationSet\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -6532,6 +6537,7 @@
       },\
       \"documentation\":\"<p>Describes a conversion task.</p>\"\
     },\
+    \"ConversionTaskId\":{\"type\":\"string\"},\
     \"ConversionTaskState\":{\
       \"type\":\"string\",\
       \"enum\":[\
@@ -6606,7 +6612,7 @@
           \"locationName\":\"encrypted\"\
         },\
         \"KmsKeyId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KmsKeyId\",\
           \"documentation\":\"<p>An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with \\\"alias/\\\". For example:</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p> <p>The specified CMK must exist in the Region that the snapshot is being copied to. </p>\",\
           \"locationName\":\"kmsKeyId\"\
         },\
@@ -6663,7 +6669,7 @@
           \"locationName\":\"encrypted\"\
         },\
         \"KmsKeyId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KmsKeyId\",\
           \"documentation\":\"<p>The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for Amazon EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using any of the following:</p> <ul> <li> <p>Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p> </li> <li> <p>Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p> </li> </ul> <p>AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.</p>\",\
           \"locationName\":\"kmsKeyId\"\
         },\
@@ -6896,7 +6902,7 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint to which to add the route.</p>\"\
         },\
         \"DestinationCidrBlock\":{\
@@ -7057,7 +7063,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC for which to create the egress-only internet gateway.</p>\"\
         }\
       }\
@@ -7328,6 +7334,11 @@
         \"ClientToken\":{\
           \"shape\":\"String\",\
           \"documentation\":\"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\\\">Ensuring Idempotency</a>.</p>\"\
+        },\
+        \"TagSpecifications\":{\
+          \"shape\":\"TagSpecificationList\",\
+          \"documentation\":\"<p>The tags to apply to the FPGA image during creation.</p>\",\
+          \"locationName\":\"TagSpecification\"\
         }\
       }\
     },\
@@ -7369,7 +7380,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
@@ -7410,7 +7421,7 @@
           \"locationName\":\"exportToS3\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
@@ -7456,7 +7467,7 @@
       \"required\":[\"KeyName\"],\
       \"members\":{\
         \"KeyName\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KeyPairName\",\
           \"documentation\":\"<p>A unique name for the key pair.</p> <p>Constraints: Up to 255 ASCII characters</p>\"\
         },\
         \"DryRun\":{\
@@ -7523,7 +7534,7 @@
           \"documentation\":\"<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\\\">Ensuring Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>\"\
         },\
         \"LaunchTemplateId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"LaunchTemplateId\",\
           \"documentation\":\"<p>The ID of the launch template. You must specify either the launch template ID or launch template name in the request.</p>\"\
         },\
         \"LaunchTemplateName\":{\
@@ -7562,7 +7573,7 @@
       ],\
       \"members\":{\
         \"AllocationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"AllocationId\",\
           \"documentation\":\"<p>The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>\"\
         },\
         \"ClientToken\":{\
@@ -7570,7 +7581,7 @@
           \"documentation\":\"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\\\">How to Ensure Idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>\"\
         },\
         \"SubnetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetId\",\
           \"documentation\":\"<p>The subnet in which to create the NAT gateway.</p>\"\
         }\
       }\
@@ -7626,7 +7637,7 @@
           \"locationName\":\"ipv6CidrBlock\"\
         },\
         \"NetworkAclId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkAclId\",\
           \"documentation\":\"<p>The ID of the network ACL.</p>\",\
           \"locationName\":\"networkAclId\"\
         },\
@@ -7662,7 +7673,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -7686,7 +7697,7 @@
       ],\
       \"members\":{\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\"\
         },\
         \"AwsAccountId\":{\
@@ -7768,7 +7779,7 @@
           \"documentation\":\"<p>Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html\\\"> Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
         },\
         \"SubnetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetId\",\
           \"documentation\":\"<p>The ID of the subnet to associate with the network interface.</p>\",\
           \"locationName\":\"subnetId\"\
         }\
@@ -7873,41 +7884,41 @@
           \"locationName\":\"dryRun\"\
         },\
         \"EgressOnlyInternetGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"EgressOnlyInternetGatewayId\",\
           \"documentation\":\"<p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>\",\
           \"locationName\":\"egressOnlyInternetGatewayId\"\
         },\
         \"GatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableGatewayId\",\
           \"documentation\":\"<p>The ID of an internet gateway or virtual private gateway attached to your VPC.</p>\",\
           \"locationName\":\"gatewayId\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one network interface is attached.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
         \"NatGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NatGatewayId\",\
           \"documentation\":\"<p>[IPv4 traffic only] The ID of a NAT gateway.</p>\",\
           \"locationName\":\"natGatewayId\"\
         },\
         \"TransitGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayId\",\
           \"documentation\":\"<p>The ID of a transit gateway.</p>\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of a network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         },\
         \"RouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableId\",\
           \"documentation\":\"<p>The ID of the route table for the route.</p>\",\
           \"locationName\":\"routeTableId\"\
         },\
         \"VpcPeeringConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcPeeringConnectionId\",\
           \"documentation\":\"<p>The ID of a VPC peering connection.</p>\",\
           \"locationName\":\"vpcPeeringConnectionId\"\
         }\
@@ -7933,7 +7944,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -7966,7 +7977,7 @@
           \"documentation\":\"<p>The name of the security group.</p> <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p> <p>Constraints for EC2-Classic: ASCII characters</p> <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>[EC2-VPC] The ID of the VPC. Required for EC2-VPC.</p>\"\
         },\
         \"DryRun\":{\
@@ -7995,7 +8006,7 @@
           \"documentation\":\"<p>A description for the snapshot.</p>\"\
         },\
         \"VolumeId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VolumeId\",\
           \"documentation\":\"<p>The ID of the EBS volume.</p>\"\
         },\
         \"TagSpecifications\":{\
@@ -8105,7 +8116,7 @@
           \"documentation\":\"<p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         },\
         \"DryRun\":{\
@@ -8199,7 +8210,7 @@
       ],\
       \"members\":{\
         \"TrafficMirrorFilterId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorFilterId\",\
           \"documentation\":\"<p>The ID of the filter that this rule is associated with.</p>\"\
         },\
         \"TrafficDirection\":{\
@@ -8274,20 +8285,20 @@
       ],\
       \"members\":{\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the source network interface.</p>\"\
         },\
         \"TrafficMirrorTargetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorTargetId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror target.</p>\"\
         },\
         \"TrafficMirrorFilterId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorFilterId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror filter.</p>\"\
         },\
         \"PacketLength\":{\
           \"shape\":\"Integer\",\
-          \"documentation\":\"<p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror. For example, if you set this value to 1network0, then the first 100 bytes that meet the filter criteria are copied to the target.</p> <p>If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number of bytes in each packet to mirror.</p>\"\
+          \"documentation\":\"<p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target.</p> <p>If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number of bytes in each packet to mirror.</p>\"\
         },\
         \"SessionNumber\":{\
           \"shape\":\"Integer\",\
@@ -8336,7 +8347,7 @@
       \"type\":\"structure\",\
       \"members\":{\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The network interface ID that is associated with the target.</p>\"\
         },\
         \"NetworkLoadBalancerArn\":{\
@@ -8422,11 +8433,11 @@
           \"documentation\":\"<p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>\"\
         },\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"Blackhole\":{\
@@ -8454,7 +8465,7 @@
       \"required\":[\"TransitGatewayId\"],\
       \"members\":{\
         \"TransitGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayId\",\
           \"documentation\":\"<p>The ID of the transit gateway.</p>\"\
         },\
         \"TagSpecifications\":{\
@@ -8486,11 +8497,11 @@
       ],\
       \"members\":{\
         \"TransitGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayId\",\
           \"documentation\":\"<p>The ID of the transit gateway.</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         },\
         \"SubnetIds\":{\
@@ -8590,7 +8601,7 @@
           \"documentation\":\"<p>The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances\\\">Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html\\\">Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>\"\
         },\
         \"KmsKeyId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KmsKeyId\",\
           \"documentation\":\"<p>The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for Amazon EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using any of the following:</p> <ul> <li> <p>Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p> </li> <li> <p>Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p> </li> </ul> <p>AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.</p>\"\
         },\
         \"Size\":{\
@@ -8598,7 +8609,7 @@
           \"documentation\":\"<p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size.</p> <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p> <note> <p>At least one of Size or SnapshotId is required.</p> </note>\"\
         },\
         \"SnapshotId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SnapshotId\",\
           \"documentation\":\"<p>The snapshot from which to create the volume.</p> <note> <p>At least one of Size or SnapshotId are required.</p> </note>\"\
         },\
         \"VolumeType\":{\
@@ -8630,11 +8641,11 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"ServiceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ServiceId\",\
           \"documentation\":\"<p>The ID of the endpoint service.</p>\"\
         },\
         \"VpcEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcEndpointId\",\
           \"documentation\":\"<p>The ID of the endpoint. </p>\"\
         },\
         \"ConnectionNotificationArn\":{\
@@ -8682,7 +8693,7 @@
           \"documentation\":\"<p>The type of endpoint.</p> <p>Default: Gateway</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC in which the endpoint will be used.</p>\"\
         },\
         \"ServiceName\":{\
@@ -8792,7 +8803,7 @@
           \"locationName\":\"peerVpcId\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the requester VPC. You must specify this parameter in the request.</p>\",\
           \"locationName\":\"vpcId\"\
         },\
@@ -8855,7 +8866,7 @@
       ],\
       \"members\":{\
         \"CustomerGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"CustomerGatewayId\",\
           \"documentation\":\"<p>The ID of the customer gateway.</p>\"\
         },\
         \"Type\":{\
@@ -8863,11 +8874,11 @@
           \"documentation\":\"<p>The type of VPN connection (<code>ipsec.1</code>).</p>\"\
         },\
         \"VpnGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnGatewayId\",\
           \"documentation\":\"<p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>\"\
         },\
         \"TransitGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayId\",\
           \"documentation\":\"<p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>\"\
         },\
         \"DryRun\":{\
@@ -8906,7 +8917,7 @@
           \"documentation\":\"<p>The CIDR block associated with the local subnet of the customer network.</p>\"\
         },\
         \"VpnConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnConnectionId\",\
           \"documentation\":\"<p>The ID of the VPN connection.</p>\"\
         }\
       },\
@@ -9014,6 +9025,7 @@
       },\
       \"documentation\":\"<p>Describes a customer gateway.</p>\"\
     },\
+    \"CustomerGatewayId\":{\"type\":\"string\"},\
     \"CustomerGatewayIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -9062,7 +9074,7 @@
       \"required\":[\"ClientVpnEndpointId\"],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN to be deleted.</p>\"\
         },\
         \"DryRun\":{\
@@ -9089,7 +9101,7 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>\"\
         },\
         \"TargetVpcSubnetId\":{\
@@ -9121,7 +9133,7 @@
       \"required\":[\"CustomerGatewayId\"],\
       \"members\":{\
         \"CustomerGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"CustomerGatewayId\",\
           \"documentation\":\"<p>The ID of the customer gateway.</p>\"\
         },\
         \"DryRun\":{\
@@ -9137,7 +9149,7 @@
       \"required\":[\"DhcpOptionsId\"],\
       \"members\":{\
         \"DhcpOptionsId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"DhcpOptionsId\",\
           \"documentation\":\"<p>The ID of the DHCP options set.</p>\"\
         },\
         \"DryRun\":{\
@@ -9318,7 +9330,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"FpgaImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"FpgaImageId\",\
           \"documentation\":\"<p>The ID of the AFI.</p>\"\
         }\
       }\
@@ -9343,7 +9355,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"InternetGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InternetGatewayId\",\
           \"documentation\":\"<p>The ID of the internet gateway.</p>\",\
           \"locationName\":\"internetGatewayId\"\
         }\
@@ -9372,7 +9384,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"LaunchTemplateId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"LaunchTemplateId\",\
           \"documentation\":\"<p>The ID of the launch template. You must specify either the launch template ID or launch template name in the request.</p>\"\
         },\
         \"LaunchTemplateName\":{\
@@ -9400,7 +9412,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"LaunchTemplateId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"LaunchTemplateId\",\
           \"documentation\":\"<p>The ID of the launch template. You must specify either the launch template ID or launch template name in the request.</p>\"\
         },\
         \"LaunchTemplateName\":{\
@@ -9495,7 +9507,7 @@
       \"required\":[\"NatGatewayId\"],\
       \"members\":{\
         \"NatGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NatGatewayId\",\
           \"documentation\":\"<p>The ID of the NAT gateway.</p>\"\
         }\
       }\
@@ -9529,7 +9541,7 @@
           \"locationName\":\"egress\"\
         },\
         \"NetworkAclId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkAclId\",\
           \"documentation\":\"<p>The ID of the network ACL.</p>\",\
           \"locationName\":\"networkAclId\"\
         },\
@@ -9550,7 +9562,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"NetworkAclId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkAclId\",\
           \"documentation\":\"<p>The ID of the network ACL.</p>\",\
           \"locationName\":\"networkAclId\"\
         }\
@@ -9596,7 +9608,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         }\
@@ -9702,7 +9714,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"RouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableId\",\
           \"documentation\":\"<p>The ID of the route table.</p>\",\
           \"locationName\":\"routeTableId\"\
         }\
@@ -9747,7 +9759,7 @@
       \"required\":[\"SnapshotId\"],\
       \"members\":{\
         \"SnapshotId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SnapshotId\",\
           \"documentation\":\"<p>The ID of the EBS snapshot.</p>\"\
         },\
         \"DryRun\":{\
@@ -9774,7 +9786,7 @@
       \"required\":[\"SubnetId\"],\
       \"members\":{\
         \"SubnetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetId\",\
           \"documentation\":\"<p>The ID of the subnet.</p>\"\
         },\
         \"DryRun\":{\
@@ -9810,7 +9822,7 @@
       \"required\":[\"TrafficMirrorFilterId\"],\
       \"members\":{\
         \"TrafficMirrorFilterId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorFilterId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror filter.</p>\"\
         },\
         \"DryRun\":{\
@@ -9834,7 +9846,7 @@
       \"required\":[\"TrafficMirrorFilterRuleId\"],\
       \"members\":{\
         \"TrafficMirrorFilterRuleId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorFilterRuleId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror rule.</p>\"\
         },\
         \"DryRun\":{\
@@ -9858,7 +9870,7 @@
       \"required\":[\"TrafficMirrorSessionId\"],\
       \"members\":{\
         \"TrafficMirrorSessionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorSessionId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror session.</p>\"\
         },\
         \"DryRun\":{\
@@ -9882,7 +9894,7 @@
       \"required\":[\"TrafficMirrorTargetId\"],\
       \"members\":{\
         \"TrafficMirrorTargetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorTargetId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror target.</p>\"\
         },\
         \"DryRun\":{\
@@ -9906,7 +9918,7 @@
       \"required\":[\"TransitGatewayId\"],\
       \"members\":{\
         \"TransitGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayId\",\
           \"documentation\":\"<p>The ID of the transit gateway.</p>\"\
         },\
         \"DryRun\":{\
@@ -9933,7 +9945,7 @@
       ],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"DestinationCidrBlock\":{\
@@ -9961,7 +9973,7 @@
       \"required\":[\"TransitGatewayRouteTableId\"],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"DryRun\":{\
@@ -9985,7 +9997,7 @@
       \"required\":[\"TransitGatewayAttachmentId\"],\
       \"members\":{\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"DryRun\":{\
@@ -10009,7 +10021,7 @@
       \"required\":[\"VolumeId\"],\
       \"members\":{\
         \"VolumeId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VolumeId\",\
           \"documentation\":\"<p>The ID of the volume.</p>\"\
         },\
         \"DryRun\":{\
@@ -10107,7 +10119,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VpcPeeringConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcPeeringConnectionId\",\
           \"documentation\":\"<p>The ID of the VPC peering connection.</p>\",\
           \"locationName\":\"vpcPeeringConnectionId\"\
         }\
@@ -10128,7 +10140,7 @@
       \"required\":[\"VpcId\"],\
       \"members\":{\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         },\
         \"DryRun\":{\
@@ -10143,7 +10155,7 @@
       \"required\":[\"VpnConnectionId\"],\
       \"members\":{\
         \"VpnConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnConnectionId\",\
           \"documentation\":\"<p>The ID of the VPN connection.</p>\"\
         },\
         \"DryRun\":{\
@@ -10166,7 +10178,7 @@
           \"documentation\":\"<p>The CIDR block associated with the local subnet of the customer network.</p>\"\
         },\
         \"VpnConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnConnectionId\",\
           \"documentation\":\"<p>The ID of the VPN connection.</p>\"\
         }\
       },\
@@ -10177,7 +10189,7 @@
       \"required\":[\"VpnGatewayId\"],\
       \"members\":{\
         \"VpnGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnGatewayId\",\
           \"documentation\":\"<p>The ID of the virtual private gateway.</p>\"\
         },\
         \"DryRun\":{\
@@ -10217,7 +10229,7 @@
       \"required\":[\"ImageId\"],\
       \"members\":{\
         \"ImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ImageId\",\
           \"documentation\":\"<p>The ID of the AMI.</p>\"\
         },\
         \"DryRun\":{\
@@ -13416,7 +13428,7 @@
           \"documentation\":\"<p>The token for the next set of items to return. (You received this token from a prior call.)</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         }\
       }\
@@ -14532,12 +14544,12 @@
           \"locationName\":\"dryRun\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance to unlink from the VPC.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC to which the instance is linked.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -14566,12 +14578,12 @@
           \"locationName\":\"dryRun\"\
         },\
         \"InternetGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InternetGatewayId\",\
           \"documentation\":\"<p>The ID of the internet gateway.</p>\",\
           \"locationName\":\"internetGatewayId\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -14582,7 +14594,7 @@
       \"required\":[\"AttachmentId\"],\
       \"members\":{\
         \"AttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"AttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\",\
           \"locationName\":\"attachmentId\"\
         },\
@@ -14612,11 +14624,11 @@
           \"documentation\":\"<p>Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures.</p>\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         },\
         \"VolumeId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VolumeId\",\
           \"documentation\":\"<p>The ID of the volume.</p>\"\
         },\
         \"DryRun\":{\
@@ -14635,11 +14647,11 @@
       ],\
       \"members\":{\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         },\
         \"VpnGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnGatewayId\",\
           \"documentation\":\"<p>The ID of the virtual private gateway.</p>\"\
         },\
         \"DryRun\":{\
@@ -14713,6 +14725,7 @@
       },\
       \"documentation\":\"<p>Describes a set of DHCP options.</p>\"\
     },\
+    \"DhcpOptionsId\":{\"type\":\"string\"},\
     \"DhcpOptionsIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -14775,11 +14788,11 @@
       ],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the propagation route table.</p>\"\
         },\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"DryRun\":{\
@@ -14806,11 +14819,11 @@
       ],\
       \"members\":{\
         \"GatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnGatewayId\",\
           \"documentation\":\"<p>The ID of the virtual private gateway.</p>\"\
         },\
         \"RouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableId\",\
           \"documentation\":\"<p>The ID of the route table.</p>\"\
         }\
       },\
@@ -14820,7 +14833,7 @@
       \"type\":\"structure\",\
       \"members\":{\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         }\
       }\
@@ -14845,7 +14858,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -14887,7 +14900,7 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>\"\
         },\
         \"AssociationId\":{\
@@ -14940,7 +14953,7 @@
       \"required\":[\"AssociationId\"],\
       \"members\":{\
         \"AssociationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableAssociationId\",\
           \"documentation\":\"<p>The association ID representing the current association between the route table and subnet.</p>\",\
           \"locationName\":\"associationId\"\
         },\
@@ -14956,7 +14969,7 @@
       \"required\":[\"AssociationId\"],\
       \"members\":{\
         \"AssociationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetCidrAssociationId\",\
           \"documentation\":\"<p>The association ID for the CIDR block.</p>\",\
           \"locationName\":\"associationId\"\
         }\
@@ -14985,11 +14998,11 @@
       ],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"DryRun\":{\
@@ -15013,7 +15026,7 @@
       \"required\":[\"AssociationId\"],\
       \"members\":{\
         \"AssociationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcCidrAssociationId\",\
           \"documentation\":\"<p>The association ID for the CIDR block.</p>\",\
           \"locationName\":\"associationId\"\
         }\
@@ -15528,11 +15541,11 @@
       ],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the propagation route table.</p>\"\
         },\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"DryRun\":{\
@@ -15559,11 +15572,11 @@
       ],\
       \"members\":{\
         \"GatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnGatewayId\",\
           \"documentation\":\"<p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>\"\
         },\
         \"RouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableId\",\
           \"documentation\":\"<p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>\"\
         }\
       },\
@@ -15579,7 +15592,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VolumeId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VolumeId\",\
           \"documentation\":\"<p>The ID of the volume.</p>\",\
           \"locationName\":\"volumeId\"\
         }\
@@ -15590,7 +15603,7 @@
       \"type\":\"structure\",\
       \"members\":{\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         }\
       }\
@@ -15615,7 +15628,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -15704,7 +15717,7 @@
       \"required\":[\"ClientVpnEndpointId\"],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint.</p>\"\
         },\
         \"DryRun\":{\
@@ -15733,7 +15746,7 @@
       \"required\":[\"ClientVpnEndpointId\"],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint.</p>\"\
         },\
         \"DryRun\":{\
@@ -15786,7 +15799,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"ImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ImageId\",\
           \"documentation\":\"<p>The ID of the image.</p>\"\
         },\
         \"S3ExportLocation\":{\
@@ -15940,6 +15953,7 @@
       },\
       \"documentation\":\"<p>Describes an instance export task.</p>\"\
     },\
+    \"ExportTaskId\":{\"type\":\"string\"},\
     \"ExportTaskIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -16054,7 +16068,7 @@
       ],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the route table.</p>\"\
         },\
         \"Filters\":{\
@@ -16673,6 +16687,7 @@
         \"productCodes\"\
       ]\
     },\
+    \"FpgaImageId\":{\"type\":\"string\"},\
     \"FpgaImageIdList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -16721,7 +16736,7 @@
       \"required\":[\"CapacityReservationId\"],\
       \"members\":{\
         \"CapacityReservationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"CapacityReservationId\",\
           \"documentation\":\"<p>The ID of the Capacity Reservation.</p>\"\
         },\
         \"NextToken\":{\
@@ -16788,7 +16803,7 @@
       \"required\":[\"InstanceId\"],\
       \"members\":{\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         },\
         \"DryRun\":{\
@@ -16831,7 +16846,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         },\
         \"WakeUp\":{\
@@ -16905,7 +16920,7 @@
           \"documentation\":\"<p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>\"\
         },\
         \"OfferingId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"OfferingId\",\
           \"documentation\":\"<p>The offering ID of the reservation.</p>\"\
         }\
       }\
@@ -16944,7 +16959,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         }\
       }\
@@ -16964,7 +16979,7 @@
       \"required\":[\"InstanceId\"],\
       \"members\":{\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the Windows instance.</p>\"\
         },\
         \"DryRun\":{\
@@ -17071,7 +17086,7 @@
       \"required\":[\"TransitGatewayAttachmentId\"],\
       \"members\":{\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"Filters\":{\
@@ -17113,7 +17128,7 @@
       \"required\":[\"TransitGatewayRouteTableId\"],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"Filters\":{\
@@ -17155,7 +17170,7 @@
       \"required\":[\"TransitGatewayRouteTableId\"],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"Filters\":{\
@@ -17252,7 +17267,7 @@
           \"locationName\":\"configured\"\
         }\
       },\
-      \"documentation\":\"<p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html\\\">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
+      \"documentation\":\"<p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html\\\">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
     },\
     \"HibernationOptionsRequest\":{\
       \"type\":\"structure\",\
@@ -17262,7 +17277,7 @@
           \"documentation\":\"<p>If you set this parameter to <code>true</code>, your instance is enabled for hibernation.</p> <p>Default: <code>false</code> </p>\"\
         }\
       },\
-      \"documentation\":\"<p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html\\\">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
+      \"documentation\":\"<p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html\\\">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
     },\
     \"HistoryRecord\":{\
       \"type\":\"structure\",\
@@ -17391,6 +17406,7 @@
       },\
       \"documentation\":\"<p>Describes the properties of the Dedicated Host.</p>\"\
     },\
+    \"HostId\":{\"type\":\"string\"},\
     \"HostInstance\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -17985,6 +18001,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"ImageId\":{\"type\":\"string\"},\
     \"ImageIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -18027,7 +18044,7 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint to which the client certificate revocation list applies.</p>\"\
         },\
         \"CertificateRevocationList\":{\
@@ -18087,7 +18104,7 @@
           \"documentation\":\"<p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>\"\
         },\
         \"KmsKeyId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KmsKeyId\",\
           \"documentation\":\"<p>An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p> </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p> </li> <li> <p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p> </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p> <p>The specified CMK must exist in the Region that the AMI is being copied to.</p>\"\
         },\
         \"LicenseType\":{\
@@ -18495,7 +18512,7 @@
           \"documentation\":\"<p>Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html\\\">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
         },\
         \"KmsKeyId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KmsKeyId\",\
           \"documentation\":\"<p>An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p> </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p> </li> <li> <p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p> </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p> <p>The specified CMK must exist in the Region that the snapshot is being copied to.</p>\"\
         },\
         \"RoleName\":{\
@@ -18552,6 +18569,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"ImportTaskId\":{\"type\":\"string\"},\
     \"ImportTaskIdList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -19947,6 +19965,8 @@
         \"u-6tb1.metal\",\
         \"u-9tb1.metal\",\
         \"u-12tb1.metal\",\
+        \"u-18tb1.metal\",\
+        \"u-24tb1.metal\",\
         \"a1.medium\",\
         \"a1.large\",\
         \"a1.xlarge\",\
@@ -20071,6 +20091,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"InternetGatewayId\":{\"type\":\"string\"},\
     \"InternetGatewayList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -20212,6 +20233,7 @@
         \"disable\"\
       ]\
     },\
+    \"KernelId\":{\"type\":\"string\"},\
     \"KeyNameStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -20228,7 +20250,7 @@
           \"locationName\":\"keyFingerprint\"\
         },\
         \"KeyMaterial\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SensitiveUserData\",\
           \"documentation\":\"<p>An unencrypted PEM encoded RSA private key.</p>\",\
           \"locationName\":\"keyMaterial\"\
         },\
@@ -20263,6 +20285,8 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"KeyPairName\":{\"type\":\"string\"},\
+    \"KmsKeyId\":{\"type\":\"string\"},\
     \"LaunchPermission\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -20730,7 +20754,7 @@
           \"documentation\":\"<p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p> <p>Default: <code>false</code> </p>\"\
         }\
       },\
-      \"documentation\":\"<p>Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux.</p>\"\
+      \"documentation\":\"<p>Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>.</p>\"\
     },\
     \"LaunchTemplateIamInstanceProfileSpecification\":{\
       \"type\":\"structure\",\
@@ -20762,6 +20786,7 @@
       },\
       \"documentation\":\"<p>An IAM instance profile.</p>\"\
     },\
+    \"LaunchTemplateId\":{\"type\":\"string\"},\
     \"LaunchTemplateInstanceMarketOptions\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -21439,7 +21464,7 @@
       \"required\":[\"CapacityReservationId\"],\
       \"members\":{\
         \"CapacityReservationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"CapacityReservationId\",\
           \"documentation\":\"<p>The ID of the Capacity Reservation.</p>\"\
         },\
         \"InstanceCount\":{\
@@ -21475,7 +21500,7 @@
       \"required\":[\"ClientVpnEndpointId\"],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint to modify.</p>\"\
         },\
         \"ServerCertificateArn\":{\
@@ -21519,7 +21544,7 @@
       \"required\":[\"KmsKeyId\"],\
       \"members\":{\
         \"KmsKeyId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KmsKeyId\",\
           \"documentation\":\"<p>The identifier of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for Amazon EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using any of the following:</p> <ul> <li> <p>Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example, alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p> </li> <li> <p>Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p> </li> </ul> <p>AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.</p>\"\
         },\
         \"DryRun\":{\
@@ -21582,7 +21607,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"FpgaImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"FpgaImageId\",\
           \"documentation\":\"<p>The ID of the AFI.</p>\"\
         },\
         \"Attribute\":{\
@@ -21722,7 +21747,7 @@
           \"documentation\":\"<p>A new description for the AMI.</p>\"\
         },\
         \"ImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ImageId\",\
           \"documentation\":\"<p>The ID of the AMI.</p>\"\
         },\
         \"LaunchPermission\":{\
@@ -21804,7 +21829,7 @@
           \"locationName\":\"GroupId\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
@@ -21853,7 +21878,7 @@
       ],\
       \"members\":{\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance to be modified.</p>\"\
         },\
         \"CapacityReservationSpecification\":{\
@@ -21923,7 +21948,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance with the scheduled event.</p>\"\
         },\
         \"InstanceEventId\":{\
@@ -21955,16 +21980,16 @@
           \"locationName\":\"affinity\"\
         },\
         \"GroupName\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"PlacementGroupName\",\
           \"documentation\":\"<p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance from a placement group, specify an empty string (\\\"\\\").</p>\"\
         },\
         \"HostId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"HostId\",\
           \"documentation\":\"<p>The ID of the Dedicated Host with which to associate the instance.</p>\",\
           \"locationName\":\"hostId\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance that you are modifying.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
@@ -22001,7 +22026,7 @@
           \"documentation\":\"<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\\\">Ensuring Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>\"\
         },\
         \"LaunchTemplateId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"LaunchTemplateId\",\
           \"documentation\":\"<p>The ID of the launch template. You must specify either the launch template ID or launch template name in the request.</p>\"\
         },\
         \"LaunchTemplateName\":{\
@@ -22050,7 +22075,7 @@
           \"locationName\":\"SecurityGroupId\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         },\
@@ -22120,7 +22145,7 @@
           \"documentation\":\"<p>The type of operation to perform to the attribute.</p>\"\
         },\
         \"SnapshotId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SnapshotId\",\
           \"documentation\":\"<p>The ID of the snapshot.</p>\"\
         },\
         \"UserIds\":{\
@@ -22146,7 +22171,7 @@
           \"locationName\":\"excessCapacityTerminationPolicy\"\
         },\
         \"SpotFleetRequestId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SpotFleetRequestId\",\
           \"documentation\":\"<p>The ID of the Spot Fleet request.</p>\",\
           \"locationName\":\"spotFleetRequestId\"\
         },\
@@ -22186,7 +22211,7 @@
           \"documentation\":\"<p>Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be assigned a public IPv4 address.</p>\"\
         },\
         \"SubnetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SubnetId\",\
           \"documentation\":\"<p>The ID of the subnet.</p>\",\
           \"locationName\":\"subnetId\"\
         }\
@@ -22197,7 +22222,7 @@
       \"required\":[\"TrafficMirrorFilterId\"],\
       \"members\":{\
         \"TrafficMirrorFilterId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorFilterId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror filter.</p>\"\
         },\
         \"AddNetworkServices\":{\
@@ -22231,7 +22256,7 @@
       \"required\":[\"TrafficMirrorFilterRuleId\"],\
       \"members\":{\
         \"TrafficMirrorFilterRuleId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorFilterRuleId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror rule.</p>\"\
         },\
         \"TrafficDirection\":{\
@@ -22296,15 +22321,15 @@
       \"required\":[\"TrafficMirrorSessionId\"],\
       \"members\":{\
         \"TrafficMirrorSessionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorSessionId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror session.</p>\"\
         },\
         \"TrafficMirrorTargetId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorTargetId\",\
           \"documentation\":\"<p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>\"\
         },\
         \"TrafficMirrorFilterId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TrafficMirrorFilterId\",\
           \"documentation\":\"<p>The ID of the Traffic Mirror filter.</p>\"\
         },\
         \"PacketLength\":{\
@@ -22349,7 +22374,7 @@
       \"required\":[\"TransitGatewayAttachmentId\"],\
       \"members\":{\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"AddSubnetIds\":{\
@@ -22403,7 +22428,7 @@
           \"documentation\":\"<p>Indicates whether the volume should be auto-enabled for I/O operations.</p>\"\
         },\
         \"VolumeId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VolumeId\",\
           \"documentation\":\"<p>The ID of the volume.</p>\"\
         },\
         \"DryRun\":{\
@@ -22423,7 +22448,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"VolumeId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VolumeId\",\
           \"documentation\":\"<p>The ID of the volume.</p>\"\
         },\
         \"Size\":{\
@@ -22463,7 +22488,7 @@
           \"documentation\":\"<p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range \\\"plus two\\\" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>\"\
         },\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\",\
           \"locationName\":\"vpcId\"\
         }\
@@ -22478,7 +22503,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"ConnectionNotificationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ConnectionNotificationId\",\
           \"documentation\":\"<p>The ID of the notification.</p>\"\
         },\
         \"ConnectionNotificationArn\":{\
@@ -22510,7 +22535,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"VpcEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcEndpointId\",\
           \"documentation\":\"<p>The ID of the endpoint.</p>\"\
         },\
         \"ResetPolicy\":{\
@@ -22577,7 +22602,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"ServiceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ServiceId\",\
           \"documentation\":\"<p>The ID of the service.</p>\"\
         },\
         \"AcceptanceRequired\":{\
@@ -22655,7 +22680,7 @@
           \"documentation\":\"<p>The VPC peering connection options for the requester VPC.</p>\"\
         },\
         \"VpcPeeringConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcPeeringConnectionId\",\
           \"documentation\":\"<p>The ID of the VPC peering connection.</p>\"\
         }\
       }\
@@ -22683,7 +22708,7 @@
       ],\
       \"members\":{\
         \"VpcId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcId\",\
           \"documentation\":\"<p>The ID of the VPC.</p>\"\
         },\
         \"InstanceTenancy\":{\
@@ -22711,19 +22736,19 @@
       \"required\":[\"VpnConnectionId\"],\
       \"members\":{\
         \"VpnConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnConnectionId\",\
           \"documentation\":\"<p>The ID of the VPN connection.</p>\"\
         },\
         \"TransitGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayId\",\
           \"documentation\":\"<p>The ID of the transit gateway.</p>\"\
         },\
         \"CustomerGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"CustomerGatewayId\",\
           \"documentation\":\"<p>The ID of the customer gateway at your end of the VPN connection.</p>\"\
         },\
         \"VpnGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnGatewayId\",\
           \"documentation\":\"<p>The ID of the virtual private gateway at the AWS side of the VPN connection.</p>\"\
         },\
         \"DryRun\":{\
@@ -22749,7 +22774,7 @@
       ],\
       \"members\":{\
         \"VpnConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnConnectionId\",\
           \"documentation\":\"<p>The ID of the AWS Site-to-Site VPN connection.</p>\"\
         },\
         \"VpnTunnelOutsideIpAddress\":{\
@@ -22780,7 +22805,7 @@
       ],\
       \"members\":{\
         \"VpnConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpnConnectionId\",\
           \"documentation\":\"<p>The ID of the AWS Site-to-Site VPN connection.</p>\"\
         },\
         \"VpnTunnelOutsideIpAddress\":{\
@@ -23080,6 +23105,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"NatGatewayId\":{\"type\":\"string\"},\
     \"NatGatewayList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -23159,6 +23185,7 @@
       },\
       \"documentation\":\"<p>Describes an association between a network ACL and a subnet.</p>\"\
     },\
+    \"NetworkAclAssociationId\":{\"type\":\"string\"},\
     \"NetworkAclAssociationList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -23219,6 +23246,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"NetworkAclId\":{\"type\":\"string\"},\
     \"NetworkAclList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -23433,6 +23461,7 @@
       \"type\":\"string\",\
       \"enum\":[\"efa\"]\
     },\
+    \"NetworkInterfaceId\":{\"type\":\"string\"},\
     \"NetworkInterfaceIdList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -23630,6 +23659,7 @@
         \"convertible\"\
       ]\
     },\
+    \"OfferingId\":{\"type\":\"string\"},\
     \"OfferingTypeValues\":{\
       \"type\":\"string\",\
       \"enum\":[\
@@ -24076,6 +24106,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"PlacementGroupName\":{\"type\":\"string\"},\
     \"PlacementGroupState\":{\
       \"type\":\"string\",\
       \"enum\":[\
@@ -24616,7 +24647,7 @@
           \"documentation\":\"<p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>\"\
         },\
         \"OfferingId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"OfferingId\",\
           \"documentation\":\"<p>The ID of the offering.</p>\"\
         }\
       }\
@@ -24704,7 +24735,7 @@
         },\
         \"PurchaseTime\":{\
           \"shape\":\"DateTime\",\
-          \"documentation\":\"<p>The time at which to purchase the Reserved Instance.</p>\"\
+          \"documentation\":\"<p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>\"\
         }\
       },\
       \"documentation\":\"<p>Contains the parameters for PurchaseReservedInstancesOffering.</p>\"\
@@ -24775,6 +24806,7 @@
         \"Windows (Amazon VPC)\"\
       ]\
     },\
+    \"RamdiskId\":{\"type\":\"string\"},\
     \"ReasonCodesList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -24894,7 +24926,7 @@
           \"locationName\":\"enaSupport\"\
         },\
         \"KernelId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"KernelId\",\
           \"documentation\":\"<p>The ID of the kernel.</p>\",\
           \"locationName\":\"kernelId\"\
         },\
@@ -24909,7 +24941,7 @@
           \"locationName\":\"BillingProduct\"\
         },\
         \"RamdiskId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RamdiskId\",\
           \"documentation\":\"<p>The ID of the RAM disk.</p>\",\
           \"locationName\":\"ramdiskId\"\
         },\
@@ -24947,7 +24979,7 @@
       \"required\":[\"TransitGatewayAttachmentId\"],\
       \"members\":{\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"DryRun\":{\
@@ -24978,7 +25010,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"ServiceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ServiceId\",\
           \"documentation\":\"<p>The ID of the service.</p>\"\
         },\
         \"VpcEndpointIds\":{\
@@ -25008,7 +25040,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"VpcPeeringConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcPeeringConnectionId\",\
           \"documentation\":\"<p>The ID of the VPC peering connection.</p>\",\
           \"locationName\":\"vpcPeeringConnectionId\"\
         }\
@@ -25028,7 +25060,7 @@
       \"type\":\"structure\",\
       \"members\":{\
         \"AllocationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"AllocationId\",\
           \"documentation\":\"<p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>\"\
         },\
         \"PublicIp\":{\
@@ -25103,7 +25135,7 @@
       ],\
       \"members\":{\
         \"AssociationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkAclAssociationId\",\
           \"documentation\":\"<p>The ID of the current association between the original network ACL and the subnet.</p>\",\
           \"locationName\":\"associationId\"\
         },\
@@ -25113,7 +25145,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"NetworkAclId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkAclId\",\
           \"documentation\":\"<p>The ID of the new network ACL to associate with the subnet.</p>\",\
           \"locationName\":\"networkAclId\"\
         }\
@@ -25165,7 +25197,7 @@
           \"locationName\":\"ipv6CidrBlock\"\
         },\
         \"NetworkAclId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkAclId\",\
           \"documentation\":\"<p>The ID of the ACL.</p>\",\
           \"locationName\":\"networkAclId\"\
         },\
@@ -25211,41 +25243,41 @@
           \"locationName\":\"dryRun\"\
         },\
         \"EgressOnlyInternetGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"EgressOnlyInternetGatewayId\",\
           \"documentation\":\"<p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>\",\
           \"locationName\":\"egressOnlyInternetGatewayId\"\
         },\
         \"GatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableGatewayId\",\
           \"documentation\":\"<p>The ID of an internet gateway or virtual private gateway.</p>\",\
           \"locationName\":\"gatewayId\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of a NAT instance in your VPC.</p>\",\
           \"locationName\":\"instanceId\"\
         },\
         \"NatGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NatGatewayId\",\
           \"documentation\":\"<p>[IPv4 traffic only] The ID of a NAT gateway.</p>\",\
           \"locationName\":\"natGatewayId\"\
         },\
         \"TransitGatewayId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayId\",\
           \"documentation\":\"<p>The ID of a transit gateway.</p>\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of a network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         },\
         \"RouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableId\",\
           \"documentation\":\"<p>The ID of the route table.</p>\",\
           \"locationName\":\"routeTableId\"\
         },\
         \"VpcPeeringConnectionId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"VpcPeeringConnectionId\",\
           \"documentation\":\"<p>The ID of a VPC peering connection.</p>\",\
           \"locationName\":\"vpcPeeringConnectionId\"\
         }\
@@ -25259,7 +25291,7 @@
       ],\
       \"members\":{\
         \"AssociationId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableAssociationId\",\
           \"documentation\":\"<p>The association ID.</p>\",\
           \"locationName\":\"associationId\"\
         },\
@@ -25269,7 +25301,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"RouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"RouteTableId\",\
           \"documentation\":\"<p>The ID of the new route table to associate with the subnet.</p>\",\
           \"locationName\":\"routeTableId\"\
         }\
@@ -25297,11 +25329,11 @@
           \"documentation\":\"<p>The CIDR range used for the destination match. Routing decisions are based on the most specific match.</p>\"\
         },\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the route table.</p>\"\
         },\
         \"TransitGatewayAttachmentId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayAttachmentId\",\
           \"documentation\":\"<p>The ID of the attachment.</p>\"\
         },\
         \"Blackhole\":{\
@@ -25400,7 +25432,7 @@
     \"RequestHostIdSet\":{\
       \"type\":\"list\",\
       \"member\":{\
-        \"shape\":\"String\",\
+        \"shape\":\"HostId\",\
         \"locationName\":\"item\"\
       }\
     },\
@@ -25513,7 +25545,7 @@
         },\
         \"HibernationOptions\":{\
           \"shape\":\"LaunchTemplateHibernationOptionsRequest\",\
-          \"documentation\":\"<p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html\\\">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
+          \"documentation\":\"<p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites\\\">hibernation prerequisites</a>. For more information, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html\\\">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\"\
         }\
       },\
       \"documentation\":\"<p>The information to include in the launch template.</p>\"\
@@ -26047,6 +26079,7 @@
       },\
       \"documentation\":\"<p>Describes a Reserved Instance listing.</p>\"\
     },\
+    \"ReservedInstancesListingId\":{\"type\":\"string\"},\
     \"ReservedInstancesListingList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -26273,7 +26306,7 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         },\
         \"FpgaImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"FpgaImageId\",\
           \"documentation\":\"<p>The ID of the AFI.</p>\"\
         },\
         \"Attribute\":{\
@@ -26308,7 +26341,7 @@
           \"documentation\":\"<p>The attribute to reset (currently you can only reset the launch permission attribute).</p>\"\
         },\
         \"ImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ImageId\",\
           \"documentation\":\"<p>The ID of the AMI.</p>\"\
         },\
         \"DryRun\":{\
@@ -26337,7 +26370,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\",\
           \"locationName\":\"instanceId\"\
         }\
@@ -26353,7 +26386,7 @@
           \"locationName\":\"dryRun\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         },\
@@ -26377,7 +26410,7 @@
           \"documentation\":\"<p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>\"\
         },\
         \"SnapshotId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"SnapshotId\",\
           \"documentation\":\"<p>The ID of the snapshot.</p>\"\
         },\
         \"DryRun\":{\
@@ -26640,7 +26673,7 @@
       ],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>\"\
         },\
         \"TargetNetworkCidr\":{\
@@ -26928,6 +26961,7 @@
       },\
       \"documentation\":\"<p>Describes an association between a route table and a subnet.</p>\"\
     },\
+    \"RouteTableAssociationId\":{\"type\":\"string\"},\
     \"RouteTableAssociationList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -26935,6 +26969,8 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"RouteTableGatewayId\":{\"type\":\"string\"},\
+    \"RouteTableId\":{\"type\":\"string\"},\
     \"RouteTableList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -26974,7 +27010,7 @@
           \"locationName\":\"BlockDeviceMapping\"\
         },\
         \"ImageId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ImageId\",\
           \"documentation\":\"<p>The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</p>\"\
         },\
         \"InstanceType\":{\
@@ -27151,7 +27187,7 @@
           \"documentation\":\"<p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>\"\
         },\
         \"ScheduledInstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ScheduledInstanceId\",\
           \"documentation\":\"<p>The Scheduled Instance ID.</p>\"\
         }\
       },\
@@ -27357,6 +27393,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"ScheduledInstanceId\":{\"type\":\"string\"},\
     \"ScheduledInstanceIdRequestSet\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -27702,7 +27739,7 @@
       ],\
       \"members\":{\
         \"TransitGatewayRouteTableId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"TransitGatewayRouteTableId\",\
           \"documentation\":\"<p>The ID of the transit gateway route table.</p>\"\
         },\
         \"Filters\":{\
@@ -27851,7 +27888,7 @@
       \"required\":[\"InstanceId\"],\
       \"members\":{\
         \"InstanceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"InstanceId\",\
           \"documentation\":\"<p>The ID of the instance.</p>\"\
         },\
         \"DryRun\":{\
@@ -27859,6 +27896,10 @@
           \"documentation\":\"<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>\"\
         }\
       }\
+    },\
+    \"SensitiveUserData\":{\
+      \"type\":\"string\",\
+      \"sensitive\":true\
     },\
     \"ServiceConfiguration\":{\
       \"type\":\"structure\",\
@@ -27996,6 +28037,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"ServiceId\":{\"type\":\"string\"},\
     \"ServiceState\":{\
       \"type\":\"string\",\
       \"enum\":[\
@@ -28238,6 +28280,7 @@
       },\
       \"documentation\":\"<p>The disk container object for the import snapshot request.</p>\"\
     },\
+    \"SnapshotId\":{\"type\":\"string\"},\
     \"SnapshotIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -28688,6 +28731,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"SpotFleetRequestId\":{\"type\":\"string\"},\
     \"SpotFleetTagSpecification\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -28919,7 +28963,7 @@
       \"members\":{\
         \"AllocationStrategy\":{\
           \"shape\":\"SpotAllocationStrategy\",\
-          \"documentation\":\"<p>Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance pools with the lowest price. This is the default allocation strategy.</p> <p>If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance pools that you specify.</p> <p>If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.</p>\",\
+          \"documentation\":\"<p>Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance pools with the lowest price. This is the default allocation strategy.</p> <p>If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance pools that you specify.</p> <p>If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.</p>\",\
           \"locationName\":\"allocationStrategy\"\
         },\
         \"InstanceInterruptionBehavior\":{\
@@ -28929,7 +28973,7 @@
         },\
         \"InstancePoolsToUseCount\":{\
           \"shape\":\"Integer\",\
-          \"documentation\":\"<p>The number of Spot pools across which to allocate your target Spot capacity. Valid only when <b>AllocationStrategy</b> is set to <code>lowestPrice</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>\",\
+          \"documentation\":\"<p>The number of Spot pools across which to allocate your target Spot capacity. Valid only when <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>\",\
           \"locationName\":\"instancePoolsToUseCount\"\
         },\
         \"SingleInstanceType\":{\
@@ -28960,7 +29004,7 @@
       \"members\":{\
         \"AllocationStrategy\":{\
           \"shape\":\"SpotAllocationStrategy\",\
-          \"documentation\":\"<p>Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance pools with the lowest price. This is the default allocation strategy.</p> <p>If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance pools that you specify.</p> <p>If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.</p>\"\
+          \"documentation\":\"<p>Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance pools with the lowest price. This is the default allocation strategy.</p> <p>If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance pools that you specify.</p> <p>If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.</p>\"\
         },\
         \"InstanceInterruptionBehavior\":{\
           \"shape\":\"SpotInstanceInterruptionBehavior\",\
@@ -29351,6 +29395,7 @@
       },\
       \"documentation\":\"<p>Describes a subnet.</p>\"\
     },\
+    \"SubnetCidrAssociationId\":{\"type\":\"string\"},\
     \"SubnetCidrBlockState\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -29378,6 +29423,7 @@
         \"failed\"\
       ]\
     },\
+    \"SubnetId\":{\"type\":\"string\"},\
     \"SubnetIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -29534,7 +29580,7 @@
       \"members\":{\
         \"ResourceType\":{\
           \"shape\":\"ResourceType\",\
-          \"documentation\":\"<p>The type of resource to tag. Currently, the resource types that support tagging on creation are: <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> | <code>fleet</code> | <code>instance</code> | <code>launch-template</code> | <code>snapshot</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a resource after it has been created, see <a>CreateTags</a>.</p>\",\
+          \"documentation\":\"<p>The type of resource to tag. Currently, the resource types that support tagging on creation are: <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> | <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> | <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a resource after it has been created, see <a href=\\\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html\\\">CreateTags</a>.</p>\",\
           \"locationName\":\"resourceType\"\
         },\
         \"Tags\":{\
@@ -29756,7 +29802,7 @@
       \"required\":[\"ClientVpnEndpointId\"],\
       \"members\":{\
         \"ClientVpnEndpointId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"ClientVpnEndpointId\",\
           \"documentation\":\"<p>The ID of the Client VPN endpoint to which the client is connected.</p>\"\
         },\
         \"ConnectionId\":{\
@@ -29890,6 +29936,7 @@
       },\
       \"documentation\":\"<p>Describes the Traffic Mirror filter.</p>\"\
     },\
+    \"TrafficMirrorFilterId\":{\"type\":\"string\"},\
     \"TrafficMirrorFilterRule\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -29964,6 +30011,7 @@
       \"type\":\"list\",\
       \"member\":{\"shape\":\"TrafficMirrorFilterRuleField\"}\
     },\
+    \"TrafficMirrorFilterRuleId\":{\"type\":\"string\"},\
     \"TrafficMirrorFilterRuleList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -30094,6 +30142,7 @@
       \"type\":\"list\",\
       \"member\":{\"shape\":\"TrafficMirrorSessionField\"}\
     },\
+    \"TrafficMirrorSessionId\":{\"type\":\"string\"},\
     \"TrafficMirrorSessionSet\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -30142,6 +30191,7 @@
       },\
       \"documentation\":\"<p>Describes a Traffic Mirror target.</p>\"\
     },\
+    \"TrafficMirrorTargetId\":{\"type\":\"string\"},\
     \"TrafficMirrorTargetSet\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -30327,6 +30377,7 @@
       },\
       \"documentation\":\"<p>Describes an association.</p>\"\
     },\
+    \"TransitGatewayAttachmentId\":{\"type\":\"string\"},\
     \"TransitGatewayAttachmentIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\"shape\":\"String\"}\
@@ -30385,6 +30436,7 @@
         \"failing\"\
       ]\
     },\
+    \"TransitGatewayId\":{\"type\":\"string\"},\
     \"TransitGatewayIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -30665,6 +30717,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"TransitGatewayRouteTableId\":{\"type\":\"string\"},\
     \"TransitGatewayRouteTableIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -30925,7 +30978,7 @@
           \"locationName\":\"ipv6Addresses\"\
         },\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         }\
@@ -30954,7 +31007,7 @@
       ],\
       \"members\":{\
         \"NetworkInterfaceId\":{\
-          \"shape\":\"String\",\
+          \"shape\":\"NetworkInterfaceId\",\
           \"documentation\":\"<p>The ID of the network interface.</p>\",\
           \"locationName\":\"networkInterfaceId\"\
         },\
@@ -31189,7 +31242,8 @@
           \"locationName\":\"data\"\
         }\
       },\
-      \"documentation\":\"<p>Describes the user data for an instance.</p>\"\
+      \"documentation\":\"<p>Describes the user data for an instance.</p>\",\
+      \"sensitive\":true\
     },\
     \"UserGroupStringList\":{\
       \"type\":\"list\",\
@@ -31466,6 +31520,7 @@
       },\
       \"documentation\":\"<p>Describes an EBS volume.</p>\"\
     },\
+    \"VolumeId\":{\"type\":\"string\"},\
     \"VolumeIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -31832,6 +31887,7 @@
         \"enableDnsHostnames\"\
       ]\
     },\
+    \"VpcCidrAssociationId\":{\"type\":\"string\"},\
     \"VpcCidrBlockAssociation\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -32056,6 +32112,7 @@
         \"locationName\":\"item\"\
       }\
     },\
+    \"VpcEndpointId\":{\"type\":\"string\"},\
     \"VpcEndpointSet\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -32070,6 +32127,7 @@
         \"Gateway\"\
       ]\
     },\
+    \"VpcId\":{\"type\":\"string\"},\
     \"VpcIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -32148,6 +32206,7 @@
       },\
       \"documentation\":\"<p>Describes a VPC peering connection.</p>\"\
     },\
+    \"VpcPeeringConnectionId\":{\"type\":\"string\"},\
     \"VpcPeeringConnectionList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -32324,6 +32383,7 @@
       },\
       \"documentation\":\"<p>Describes a VPN connection.</p>\"\
     },\
+    \"VpnConnectionId\":{\"type\":\"string\"},\
     \"VpnConnectionIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\
@@ -32417,6 +32477,7 @@
       },\
       \"documentation\":\"<p>Describes a virtual private gateway.</p>\"\
     },\
+    \"VpnGatewayId\":{\"type\":\"string\"},\
     \"VpnGatewayIdStringList\":{\
       \"type\":\"list\",\
       \"member\":{\

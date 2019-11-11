@@ -4,6 +4,23 @@
 
 ### New Features
 
+### Bug Fixes
+
+### Misc. Updates
+
+- Model updates for the following services
+
+  - Amazon Cognito Identity
+  - Amazon Comprehend
+  - Amazon Connect
+  - Amazon EC2
+  - Amazon Polly
+  - Amazon Security Token Service (STS)
+
+## 2.12.1
+
+### New Features
+
 - **Amazon Polly**
   - `AWSPollySynthesizeSpeechURLBuilder` now supports the ability to specify the engine (standard or neural) for a request.
     See [the Amazon Polly documentation](https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine)
