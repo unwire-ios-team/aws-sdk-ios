@@ -14,14 +14,7 @@
 //
 
 #import "AWSIoTService.h"
-#import <AWSCore/AWSCategory.h>
-#import <AWSCore/AWSNetworking.h>
-#import <AWSCore/AWSSignature.h>
-#import <AWSCore/AWSService.h>
-#import <AWSCore/AWSURLRequestSerialization.h>
-#import <AWSCore/AWSURLResponseSerialization.h>
-#import <AWSCore/AWSURLRequestRetryHandler.h>
-#import <AWSCore/AWSSynchronizedMutableDictionary.h>
+#import <AWSCore.h>
 #import "AWSIoTResources.h"
 
 static NSString *const AWSInfoIoT = @"IoT";

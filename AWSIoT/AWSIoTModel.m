@@ -14,7 +14,7 @@
 //
 
 #import "AWSIoTModel.h"
-#import <AWSCore/AWSCategory.h>
+#import <AWSCore.h>
 
 NSString *const AWSIoTErrorDomain = @"com.amazonaws.AWSIoTErrorDomain";
 

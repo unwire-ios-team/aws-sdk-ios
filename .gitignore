@@ -42,3 +42,8 @@ Scripts/ocunit2junit
 __pycache__/
 awsconfiguration.json
 credentials-mc.json
+
+# Swift Package Manager:
+.build
+.swiftpm
+Package.resolved

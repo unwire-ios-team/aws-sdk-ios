@@ -38,7 +38,7 @@ FOUNDATION_EXPORT double AWSIoTVersionNumber DEPRECATED_MSG_ATTRIBUTE("Use AWSIo
  */
 FOUNDATION_EXPORT const unsigned char AWSIoTVersionString[] DEPRECATED_MSG_ATTRIBUTE("Use AWSIoTSDKVersion instead.");
 
-#import <AWSCore/AWSCore.h>
+#import <AWSCore.h>
 #import "AWSIoTService.h"
 #import "AWSIoTManager.h"
 #import "AWSIoTData.h"
