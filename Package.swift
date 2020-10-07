@@ -8,7 +8,6 @@ let package = Package(
     ],
     products: [
         .library(name: "AWSIoT", targets: ["AWSIoT"]),
-        .library(name: "AWSCore", targets: ["AWSCore"]),
     ],
     targets: [
         .target(
